@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files and Secrets (NEVER push to GitHub)
+.env
+.env.*
+*.env
+!.env.example
+!*/.env.example
+
+# Production builds
+dist/
+dist-ssr/
+build/
+*/dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and Editor files
+.DS_Store
+*/.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local chat storage data (keeps sample/clean, ignores user chat history)
+Backend/data/threads.json

@@ -1,0 +1,306 @@
+.chatWindow {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Apple Frosted Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.8rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    z-index: 10;
+}
+
+.brandTitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.01em;
+}
+
+.geminiBadge {
+    background: #f5f5f7;
+    color: #515154;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 980px;
+    letter-spacing: 0.2px;
+}
+
+.userIconDiv {
+    cursor: pointer;
+}
+
+.userIcon {
+    background: #f5f5f7;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1d1d1f;
+    font-size: 13px;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.userIcon:hover {
+    background: #e8e8ed;
+    transform: scale(1.04);
+}
+
+/* Apple Floating Pill Chat Input */
+.chatInput {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1.5rem 1.2rem 1.5rem;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 40%, #ffffff 100%);
+}
+
+.inputBox {
+    width: 100%;
+    position: relative;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+}
+
+.inputBox input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f7;
+    padding: 14px 48px 14px 20px;
+    font-size: 0.96rem;
+    color: #1d1d1f;
+    border-radius: 980px;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.inputBox input:focus {
+    background-color: #ffffff;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.inputBox input::placeholder {
+    color: #86868b;
+}
+
+#submit {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8ed;
+    color: #86868b;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+#submit.submitActive {
+    background-color: #0071e3;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 113, 227, 0.3);
+}
+
+#submit.submitActive:hover {
+    background-color: #0077ed;
+    transform: scale(1.06);
+}
+
+.info {
+    font-size: 0.75rem;
+    margin-top: 9px;
+    color: #86868b;
+}
+
+/* Apple Dropdown */
+.dropDown {
+    position: absolute;
+    top: 56px;
+    right: 28px;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px;
+    border-radius: 12px;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dropDownItem {
+    font-size: 0.88rem;
+    color: #1d1d1f;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.15s ease;
+}
+
+.dropDownItem i {
+    color: #86868b;
+}
+
+.dropDownItem:hover {
+    background-color: #f5f5f7;
+    color: #0071e3;
+}
+
+.dropDownItem:hover i {
+    color: #0071e3;
+}
+
+/* Apple Settings Modal */
+.settingsModalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.settingsModal {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.modalHeader h3 {
+    margin: 0;
+    color: #1d1d1f;
+    font-size: 1.05rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #86868b;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.closeBtn:hover {
+    color: #1d1d1f;
+}
+
+.modalBody {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.configRow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #f5f5f7;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.configLabel {
+    font-size: 0.74rem;
+    color: #86868b;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.configValue {
+    font-size: 0.92rem;
+    color: #1d1d1f;
+}
+
+.activeTag {
+    color: #34c759;
+    font-weight: 600;
+}
+
+.modalFooter {
+    padding: 14px 22px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fbfbfd;
+}
+
+.confirmBtn {
+    background: #0071e3;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 980px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background 0.15s ease;
+}
+
+.confirmBtn:hover {
+    background: #0077ed;
+}

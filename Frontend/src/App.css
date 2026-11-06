@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    overflow: hidden;
+}
+
+.app {
+    background-color: #ffffff;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
